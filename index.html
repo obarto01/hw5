@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content=“width=device-width, initial-scale=1”>
+<meta charset="utf-8">
+<meta name="Description" content="This is the homepage for the Joe's Hotdogs website">
+<title>Joe's Hotdogs</title>
+<style type="text/css">
+  @media only screen and (max-width: 1080px)
+  {
+    html,body {font-size: 125%; margin: 0;}
+  }
+  @media only screen and (min-width: 1081px)
+  {
+    html,body {font-size: 112%; margin: 0;}
+  }
+
+  header
+  {
+    width: 100%;
+    height: 15%;
+    top: 0;
+    background-color: yellow;
+    color: red;
+    font-size: 300%;
+    text-align: center;
+    padding-top: 2%;
+  }
+</style>
+</head>
+
+<body>
+<div style="width: 100%; height: 100%; position: fixed; overflow: scroll;">
+  <header>
+      JOE'S HOTDOGS
+  </header>
+  <br />
+  <p style="font-size: 160%;margin-left: 2%">
+    Your Order:
+  </p>
+  <div style="margin-left: 2%">
+  <script language="javaScript">
+      dogs = prompt("How many hotdogs would you like?","0");
+      fries = prompt("How many fries would you like?","0");
+      sodas = prompt("How many sodas would you like?","0");
+      var dog_price = 0;
+      var fries_price = 0;
+      var soda_price = 0;
+      if(!isNaN(dogs))
+      {
+        dog_price = parseInt(dogs)*3.25;
+      }
+      if(!isNaN(fries))
+      {
+        fries_price = parseInt(fries)*2.00;
+      }
+      if(!isNaN(sodas))
+      {
+        soda_price = parseInt(sodas)*1.50;
+      }
+      document.write("# Hotdogs: " + dogs + " at $3.25 is $" + 
+        (dog_price).toFixed(2) + "<br>");
+      document.write("# Fries: " + fries + " at $2.00 is $" + 
+        (fries_price).toFixed(2) + "<br>");
+      document.write("# Sodas: " + sodas + " at $1.50 is $" + 
+        (soda_price).toFixed(2)  + "<br>");
+      var subtotal = dog_price + fries_price + soda_price;
+      if (subtotal >= 20)
+      {
+        document.write("You Qualified for Our 10% Discount! <br>");
+        subtotal = 0.9*subtotal;
+      }
+      document.write("Your subtotal is: $" + (subtotal).toFixed(2) 
+        + "<br>");
+      var tax = subtotal*.0625;
+      document.write("Meals Tax: $" + (tax).toFixed(2) + "<br>");
+      document.write("Total: $" + (subtotal + tax).toFixed(2) + "<br>");     
+  </script> 
+  </div> 
+</div>
+</body>
+
+</html>
